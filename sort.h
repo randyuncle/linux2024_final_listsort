@@ -45,12 +45,12 @@ typedef struct {
  *  - Adding the alpha-stack merge sort to do the comparisons
  * */
 void list_sort(void *priv, struct list_head *head, list_cmp_func_t cmp);
-// void timsort_merge(void *priv, struct list_head *head, list_cmp_func_t cmp);
-// void timsort_binary(void *priv, struct list_head *head, list_cmp_func_t cmp);
-// void timsort_linear(void *priv, struct list_head *head, list_cmp_func_t cmp);
-// void timsort_l_gallop(void *priv, struct list_head *head, list_cmp_func_t cmp);
-// void timsort_b_gallop(void *priv, struct list_head *head, list_cmp_func_t cmp);
-// void shiverssort(void *priv, struct list_head *head, list_cmp_func_t cmp);
-// void shiverssort_merge(void *priv, struct list_head *head, list_cmp_func_t cmp);
+void timsort_merge(void *priv, struct list_head *head, list_cmp_func_t cmp);
+void timsort_binary(void *priv, struct list_head *head, list_cmp_func_t cmp);
+void timsort_linear(void *priv, struct list_head *head, list_cmp_func_t cmp);
+void timsort_l_gallop(void *priv, struct list_head *head, list_cmp_func_t cmp);
+void timsort_b_gallop(void *priv, struct list_head *head, list_cmp_func_t cmp);
+void shiverssort(void *priv, struct list_head *head, list_cmp_func_t cmp);
+void shiverssort_merge(void *priv, struct list_head *head, list_cmp_func_t cmp);
 
 #endif
