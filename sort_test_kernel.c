@@ -19,12 +19,12 @@ MODULE_DESCRIPTION("Sorting test driver");
 MODULE_VERSION("0.1");
 
 #define DEVICE_NAME "sort_test"
-#define MAX_BUF 1024
 
-/* The extern function from `xoroshift128p` */
+/* The function from xoroshiro128p */
 extern void seed(uint64_t, uint64_t);
 extern void jump(void);
 extern uint64_t next(void);
+
 /* The extern function from `sort_test_impl` */
 extern void worst_case_generator(struct list_head *head);
 
@@ -38,16 +38,6 @@ typedef struct {
 static dev_t dev = -1;
 static struct cdev cdev;
 static struct class *class;
-
-// static int sort_test_open(struct inode *inode, struct file *file)
-// {
-
-// }
-
-// static int sort_test_release(struct inode *inode, struct file *file)
-// {
-
-// }
 
 /* The compare function for this linked-list structure */
 static int list_cmp(void *priv, const struct list_head *a, const struct list_head *b)
@@ -68,21 +58,22 @@ static int list_cmp(void *priv, const struct list_head *a, const struct list_hea
     return res;
 }
 
+/* The array buffer that saves the place to fill the random variable
+ * or the saves the value for the duplicate case */
 int exch[MAX_LEN] = {0};
 static void create_samples(struct list_head *head,
                            element_t *space,
                            int samples,
                            int case_id)
 {
-    /* The array buffer that saves the place to fill the random variable
-     * or the saves the value for the duplicate case */
     memset(exch, 0, sizeof(exch));
     int cnt = 0;
     /* defining the place to fill random values */
     switch (case_id) {
     case 1: /* Random 3 elements */
         for (int i = 0; i < 3; i++) {
-            exch[i] = next() % samples;
+            uint64_t temp = next() % MAX_NUM;
+            exch[i] = temp % samples;
             for (int j = 0; j < i; j++) {
                 if (exch[i] == exch[j])
                     i--;
@@ -103,7 +94,8 @@ static void create_samples(struct list_head *head,
         int num = samples / 100;
 
         for (int i = 0; i < num; i++) {
-            exch[i] = next() % samples;
+            uint64_t temp = next() % MAX_NUM;
+            exch[i] = temp % samples;
             for (int j = 0; j < i; j++) {
                 if (exch[i] == exch[j]) {
                     i--;
@@ -133,14 +125,16 @@ static void create_samples(struct list_head *head,
     /* Start to create the samples for the testing list */
     for (int i = 0; i < samples; i++) {
         element_t *elem = space + i;
+
         int value;
+        uint64_t temp = next() % MAX_NUM;
         switch (case_id) {
         case 0: /* Worst case of merge sort */
             value = i;
             break;
         case 1: /* Random 3 elements */
             if (i == exch[cnt]) {
-                value = next();
+                value = temp;
                 cnt++;
             } else
                 value = i;
@@ -148,21 +142,22 @@ static void create_samples(struct list_head *head,
         case 2: /* Random last 10 elements */
             if (i < samples - 10)
                 value = i;
-            else
-                value = next();
+            else {
+                value = temp;
+            }
             break;
         case 3: /* Random 1% elements */
             if (i == exch[cnt]) {
-                value = next();
+                value = temp;
                 cnt++;
             } else
                 value = i;
             break;
         case 4: /* Duplicate */
-            value = exch[next() % 4];
+            value = exch[temp % 4];
             break;
         default: /* Random elements */
-            value = next();
+            value = temp;
             break;
         }
 
@@ -226,79 +221,84 @@ static bool check_list(struct list_head *head, int count)
     return true;
 }
 
+test_t tests[] = {
+    {.name = "listsort", .impl = list_sort},
+    {.name = "timsort_merge", .impl = timsort_merge},
+    {.name = "timsort_linear", .impl = timsort_linear},
+    {.name = "timsort_binary", .impl = timsort_binary},
+    {.name = "timsort_gallop", .impl = timsort_l_gallop},
+    {.name = "timsort_b_gallop", .impl = timsort_b_gallop},
+    {.name = "adaptive_shiverssort", .impl = shiverssort},
+    {.name = "adaptive_shiverssort_merge", .impl = shiverssort_merge},
+    {NULL, NULL},
+};
+test_t test;
+
 static ktime_t kt_sort;
 st_dev dptr;
 st_usr uptr;
 /* When a process attempts to read this opened dev file, 
  * starting the test of the linked-list.
  */
-static ssize_t sort_test_read(struct file *file, char *buf, size_t size, loff_t *offset)
+static ssize_t sort_test_read(struct file *file, char __user *buf, size_t size, loff_t *offset)
 {
-    size_t count;
-    struct list_head sample_head, testdata_head, warmdata_head;
-
-    test_t tests[] = {
-        {.name = "listsort", .impl = list_sort},
-        // {.name = "timsort", .impl = timsort_linear},
-        // {.name = "timsort_old", .impl = timsort_merge},
-        // {.name = "timsort_gallop", .impl = timsort_l_gallop},
-        // {.name = "timsort_b_gallop", .impl = timsort_b_gallop},
-        // {.name = "timsort_binary", .impl = timsort_binary},
-        // {.name = "adaptive_shiverssort", .impl = shiverssort},
-        {NULL, NULL},
-    };
-    test_t *test = tests;
-
-    element_t *samples = kmalloc(dptr.nodes * sizeof(*samples), GFP_KERNEL);
-    element_t *testdata = kmalloc(dptr.nodes * sizeof(*testdata), GFP_KERNEL);
-    element_t *warmdata = kmalloc(dptr.nodes * sizeof(*warmdata), GFP_KERNEL);
-
-    for (int i = 0 ; i < LOOP ; i++)
-    {
-        INIT_LIST_HEAD(&sample_head);
-        create_samples(&sample_head, samples, dptr.nodes, dptr.case_id);
-
-        INIT_LIST_HEAD(&testdata_head);
-        INIT_LIST_HEAD(&warmdata_head);
-        copy_list(&sample_head, &testdata_head, testdata);
-        copy_list(&sample_head, &warmdata_head, warmdata);
-
-        /* Warmup */
-        test->impl(&count, &warmdata_head, list_cmp);
-        
-        count = 0;
-        kt_sort = ktime_get();
-        /* Start the sortings */
-        test->impl(&count, &testdata_head, list_cmp);
-        kt_sort = ktime_sub(ktime_get(), kt_sort);
-        ktime_to_us(kt_sort);
-
-        if (!check_list(&testdata_head, count)) {
-            printk(KERN_ALERT "The list isn't sortdc in the correct order\n");
-            return -EFAULT;
-        }
-
-        uptr.time[i] = kt_sort;
-        uptr.count[i] = count;
-
-        /* Clean the value and list in the current `element_t` structure */
-        element_t *iterator, *next;
-        list_for_each_entry_safe (iterator, next, &sample_head, list)
-            list_del(&iterator->list);
-        list_for_each_entry_safe (iterator, next, &warmdata_head, list)
-            list_del(&iterator->list);
-        list_for_each_entry_safe (iterator, next, &testdata_head, list)
-            list_del(&iterator->list);
-
-        count = 0;
+    if (size != sizeof(st_usr)) {
+        printk(KERN_ALERT "Invalid data size\n");
+        return -EFAULT;
     }
 
-    kfree(samples);
-    kfree(testdata);
-    kfree(warmdata);
+    size_t count = 0;
+    struct list_head sample_head, warm_head;
 
+    /* The test samples */
+    element_t *samples = kmalloc(dptr.nodes * sizeof(element_t *), GFP_KERNEL);
+    if (!samples) {
+        printk(KERN_ALERT "sort_test: kmalloc failed on `samples`\n");
+        return -ENOMEM; // Return error if allocation fails
+    }
+
+    element_t *warmdatas = kmalloc(dptr.nodes * sizeof(element_t *), GFP_KERNEL);
+    if (!warmdatas) {
+        printk(KERN_ALERT "sort_test: kmalloc failed on `samples`\n");
+        return -ENOMEM; // Return error if allocation fails
+    }
+
+    INIT_LIST_HEAD(&sample_head);
+    create_samples(&sample_head, samples, dptr.nodes, dptr.case_id);
+
+    INIT_LIST_HEAD(&warm_head);
+    copy_list(&sample_head, &warm_head, warmdatas);
+
+    /* Warmup */
+    test.impl(&count, &warm_head, list_cmp);
+
+    count = 0;
+    kt_sort = ktime_get();
+    /* Start the sortings */
+    test.impl(&count, &sample_head, list_cmp);
+    kt_sort = ktime_sub(ktime_get(), kt_sort);
+    ktime_to_us(kt_sort);
+
+    if (!check_list(&sample_head, count)) {
+        printk(KERN_ALERT "The list isn't sorted in the correct order\n");
+        return -EFAULT;
+    }
+
+    uptr.time = kt_sort;
+    uptr.count = count;
+
+    /* Clean the value and list in the current `element_t` structure */
+    element_t *iterator, *next;
+    list_for_each_entry_safe (iterator, next, &sample_head, list)
+        list_del(&iterator->list);
+    list_for_each_entry_safe (iterator, next, &warm_head, list)
+        list_del(&iterator->list);
+
+    kfree(samples);
+    kfree(warmdatas);
+    
     if (copy_to_user(buf, &uptr, size) < 0) {
-        printk(KERN_ALERT "Failed to copy data from user\n");
+        printk(KERN_ALERT "Failed to copy data to user\n");
         return -EFAULT;
     }
 
@@ -317,6 +317,9 @@ static ssize_t sort_test_write(struct file *file, const char *buf, size_t size, 
         return -EFAULT;
     }
 
+    /* Update the sort test functions */
+    test = tests[dptr.test_case];
+
     return size;
 }
 
@@ -324,8 +327,6 @@ static ssize_t sort_test_write(struct file *file, const char *buf, size_t size, 
 static const struct file_operations fops = {
     .read = sort_test_read,
     .write = sort_test_write,
-    // .open = sort_test_open,
-    // .release = sort_test_release,
     .owner = THIS_MODULE,
 };
 

@@ -7,7 +7,8 @@ struct list_head;
 
 #define MAX_LEN ((1 << 20) + 20)
 #define MIN_LEN 4
-#define LOOP 10000
+#define MAX_NUM ((1 << 15) + 20)
+#define LOOP 10
 
 /* In the compare function, `void *` is a argument that could be used to
  * record the number of comparisons
@@ -29,12 +30,13 @@ typedef struct {
 typedef struct {
     size_t nodes;
     size_t case_id;
+    int test_case;
 } st_dev;
 
 /* The structure for the user space data from `copy_to_user` */
 typedef struct {
-    unsigned long long int time[LOOP];
-    size_t count[LOOP];
+    unsigned long long int time;
+    size_t count;
 } st_usr;
 
 
