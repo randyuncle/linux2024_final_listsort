@@ -9,9 +9,9 @@
 #include <linux/types.h>
 #include <linux/errno.h>
 #include <linux/string.h>
+#include <linux/list.h>
 
 #include "sort.h"
-#include "list.h"
 
 MODULE_LICENSE("Dual MIT/GPL");
 MODULE_AUTHOR("National Cheng Kung University, Taiwan");
@@ -58,84 +58,54 @@ static int list_cmp(void *priv, const struct list_head *a, const struct list_hea
     return res;
 }
 
-/* The array buffer that saves the place to fill the random variable
- * or the saves the value for the duplicate case */
-int exch[MAX_LEN] = {0};
-static void create_samples(struct list_head *head,
-                           element_t *space,
+static int create_samples(struct list_head *head,
                            int samples,
                            int case_id)
 {
-    memset(exch, 0, sizeof(exch));
-    int cnt = 0;
+    /* Variables for random values */
+    int random_section, random_index, random_count;
+    /* The array for saving the duplicate values */
+    int dup[4];
     /* defining the place to fill random values */
     switch (case_id) {
     case 1: /* Random 3 elements */
-        for (int i = 0; i < 3; i++) {
-            uint64_t temp = next() % MAX_NUM;
-            exch[i] = temp % samples;
-            for (int j = 0; j < i; j++) {
-                if (exch[i] == exch[j])
-                    i--;
-            }
-        }
-
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < i; j++) {
-                if (exch[i] < exch[j]) {
-                    int temp = exch[i];
-                    exch[i] = exch[j];
-                    exch[j] = temp;
-                }
-            }
-        }
+        random_count = 3;
+        random_section = samples / 3;
+        random_index = next() % random_section;
         break;
     case 3: /* Random 1% elements */
-        int num = samples / 100;
-
-        for (int i = 0; i < num; i++) {
-            uint64_t temp = next() % MAX_NUM;
-            exch[i] = temp % samples;
-            for (int j = 0; j < i; j++) {
-                if (exch[i] == exch[j]) {
-                    i--;
-                    break;
-                }
-            }
-        }
-
-        for (int i = 0; i < num; i++) {
-            for (int j = 0; j < i; j++) {
-                if (exch[i] < exch[j]) {
-                    int temp = exch[i];
-                    exch[i] = exch[j];
-                    exch[j] = temp;
-                }
-            }
-        }
+        random_count = samples / 100;
+        random_section = 100;
+        random_index = next() % random_section;
         break;
     case 4: /* Duplicate */
         for (int i = 0 ; i < 4 ; i++)
-            exch[i] = i + 12300;
+            dup[i] = i + 12300;
         break;
     default:
         break;
     }
 
+    int cnt = 0;
     /* Start to create the samples for the testing list */
-    for (int i = 0; i < samples; i++) {
-        element_t *elem = space + i;
+    for (int i = 0; i < samples; i++, cnt++) {
+        element_t *sample = kmalloc(sizeof(element_t), GFP_KERNEL);
+        if (!samples) {
+            printk(KERN_ALERT "sort_test: kmalloc failed on `sample`\n");
+            return -ENOMEM; // Return error if allocation fails
+        }
 
         int value;
-        uint64_t temp = next() % MAX_NUM;
         switch (case_id) {
         case 0: /* Worst case of merge sort */
             value = i;
             break;
         case 1: /* Random 3 elements */
-            if (i == exch[cnt]) {
-                value = temp;
-                cnt++;
+            if (cnt == random_index && random_count) {
+                value = next() % MAX_LEN;
+                random_index = next() % random_section;
+                cnt = -1;
+                random_count--;
             } else
                 value = i;
             break;
@@ -143,47 +113,59 @@ static void create_samples(struct list_head *head,
             if (i < samples - 10)
                 value = i;
             else {
-                value = temp;
+                value = next() % MAX_LEN;
             }
             break;
         case 3: /* Random 1% elements */
-            if (i == exch[cnt]) {
-                value = temp;
-                cnt++;
+            if (cnt == random_index && random_count) {
+                value = next() % MAX_LEN;
+                random_index = next() % random_section;
+                cnt = -1;
+                random_count--;
             } else
                 value = i;
             break;
         case 4: /* Duplicate */
-            value = exch[temp % 4];
+            value = dup[next() % 4];
             break;
         default: /* Random elements */
-            value = temp;
+            value = next() % MAX_LEN;
             break;
         }
 
-        elem->value = value;
-        elem->seq = i;
-        list_add_tail(&elem->list, head);
+        sample->value = value;
+        sample->seq = i;
+        list_add_tail(&sample->list, head);
     }
 
     /* Worst case scenario */
     if (!case_id)
         worst_case_generator(head);
+    
+    return 0;
 }
 
-static void copy_list(struct list_head *from, struct list_head *to, element_t *space)
+static int copy_list(struct list_head *from, struct list_head *to)
 {
     if (list_empty(from))
-        return;
+        return 0;
 
     element_t *entry;
     list_for_each_entry (entry, from, list) {
-        element_t *copy = space++;
+        element_t *copy = kmalloc(sizeof(element_t), GFP_KERNEL);
+        if (!copy) {
+            printk(KERN_ALERT "sort_test: kmalloc failed on `sample`\n");
+            return -ENOMEM; // Return error if allocation fails
+        }
+
         copy->value = entry->value;
         copy->seq = entry->seq;
         list_add_tail(&copy->list, to);
     }
+
+    return 0;
 }
+
 
 static bool check_list(struct list_head *head, int count)
 {
@@ -235,42 +217,48 @@ test_t tests[] = {
 test_t test;
 
 static ktime_t kt_sort;
-st_dev dptr;
-st_usr uptr;
+int nodes, case_id;
+
+static int sort_test_open(struct inode *inode, struct file *file)
+{
+    nodes = 0;
+    case_id = 0;
+    
+    printk(KERN_INFO "You have opened the `sort_test` device driver !");
+    return 0;
+}
+
+static int sort_test_release(struct inode *inode, struct file *file)
+{
+    nodes = 0;
+    case_id = 0;
+
+    printk(KERN_INFO "You have closed the `sort_test` device driver !");
+    return 0;
+}
+
 /* When a process attempts to read this opened dev file, 
  * starting the test of the linked-list.
  */
 static ssize_t sort_test_read(struct file *file, char __user *buf, size_t size, loff_t *offset)
 {
-    if (size != sizeof(st_usr)) {
-        printk(KERN_ALERT "Invalid data size\n");
-        return -EFAULT;
-    }
-
     size_t count = 0;
-    struct list_head sample_head, warm_head;
+    struct list_head sample_head, warmup_head;
 
-    /* The test samples */
-    element_t *samples = kmalloc(dptr.nodes * sizeof(element_t *), GFP_KERNEL);
-    if (!samples) {
-        printk(KERN_ALERT "sort_test: kmalloc failed on `samples`\n");
-        return -ENOMEM; // Return error if allocation fails
-    }
-
-    element_t *warmdatas = kmalloc(dptr.nodes * sizeof(element_t *), GFP_KERNEL);
-    if (!warmdatas) {
-        printk(KERN_ALERT "sort_test: kmalloc failed on `samples`\n");
-        return -ENOMEM; // Return error if allocation fails
-    }
-
+    /* Initialize the sample linked-list */
     INIT_LIST_HEAD(&sample_head);
-    create_samples(&sample_head, samples, dptr.nodes, dptr.case_id);
+    int chk = create_samples(&sample_head, nodes, case_id);
+    if (chk)
+        return chk;
 
-    INIT_LIST_HEAD(&warm_head);
-    copy_list(&sample_head, &warm_head, warmdatas);
+    /* Initialize the warmup linked-list */
+    INIT_LIST_HEAD(&warmup_head);
+    chk = copy_list(&sample_head, &warmup_head);
+    if (chk)
+        return chk;
 
     /* Warmup */
-    test.impl(&count, &warm_head, list_cmp);
+    test.impl(&count, &warmup_head, list_cmp);
 
     count = 0;
     kt_sort = ktime_get();
@@ -279,46 +267,69 @@ static ssize_t sort_test_read(struct file *file, char __user *buf, size_t size, 
     kt_sort = ktime_sub(ktime_get(), kt_sort);
     ktime_to_us(kt_sort);
 
+    /* Check if the list is sorted */
     if (!check_list(&sample_head, count)) {
         printk(KERN_ALERT "The list isn't sorted in the correct order\n");
-        return -EFAULT;
+        return 0;
     }
 
-    uptr.time = kt_sort;
-    uptr.count = count;
-
-    /* Clean the value and list in the current `element_t` structure */
+    /* Delete the list and free the current `element_t` structure */
     element_t *iterator, *next;
-    list_for_each_entry_safe (iterator, next, &sample_head, list)
+    list_for_each_entry_safe (iterator, next, &sample_head, list) {
         list_del(&iterator->list);
-    list_for_each_entry_safe (iterator, next, &warm_head, list)
-        list_del(&iterator->list);
+        kfree(iterator);
+    }
 
-    kfree(samples);
-    kfree(warmdatas);
-    
-    if (copy_to_user(buf, &uptr, size) < 0) {
+    list_for_each_entry_safe (iterator, next, &warmup_head, list) {
+        list_del(&iterator->list);
+        kfree(iterator);
+    }
+
+    /* Return the result of the test to user space */
+    char device_buf[512];
+    snprintf(device_buf, 512, "%llu %lu", (unsigned long long int) kt_sort, count);
+    unsigned long len = copy_to_user(buf, device_buf, 512);
+    if (len != 0) {
         printk(KERN_ALERT "Failed to copy data to user\n");
-        return -EFAULT;
+        return 0;
     }
 
     return size;
 }
 
-static ssize_t sort_test_write(struct file *file, const char *buf, size_t size, loff_t *offset)
+static ssize_t sort_test_write(struct file *file, const char __user  *buf, size_t size, loff_t *offset)
 {
-    if (size != sizeof(st_dev)) {
-        printk(KERN_ALERT "Invalid data size\n");
-        return -EFAULT;
-    }
-
-    if (copy_from_user(&dptr, buf, size) < 0) {
+    /* Get the test information from user space */
+    char device_buf[512];
+    unsigned long len = copy_from_user(device_buf, buf, size);
+    if (len != 0) {
         printk(KERN_ALERT "Failed to copy data from user\n");
-        return -EFAULT;
+        return 0;
     }
 
-    /* Update the sort test functions */
-    test = tests[dptr.test_case];
+    char *token;
+    char *str = kstrdup(device_buf, GFP_KERNEL);
+
+    int counter = 0;
+    /* Update the information of current sort test */
+    while ((token = strsep(&str, " ")) != NULL) {
+        /* Convert the token to an unsigned long long int */
+        long int number = simple_strtol(token, NULL, 10);
+        if (counter == 0)
+            nodes = (int) number;
+        else if (counter == 1)
+            case_id = (int) number;
+        else if (counter == 2)
+            test = tests[(int) number];
+        else
+            break;
+        counter++;
+    }
+
+    printk(KERN_INFO "The current test info: nodes = %d, case_id = %d, sort program = %s", 
+           nodes, case_id, test.name);
+
+    kfree(str);
 
     return size;
 }
@@ -327,6 +338,8 @@ static ssize_t sort_test_write(struct file *file, const char *buf, size_t size, 
 static const struct file_operations fops = {
     .read = sort_test_read,
     .write = sort_test_write,
+    .open = sort_test_open,
+    .release = sort_test_release,
     .owner = THIS_MODULE,
 };
 
