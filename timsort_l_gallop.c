@@ -3,8 +3,8 @@
 #include <linux/compiler.h>
 #include <linux/export.h>
 #include <linux/string.h>
+#include <linux/list.h>
 
-#include "list.h"
 #include "sort.h"
 
 #define MIN_GALLOP 7

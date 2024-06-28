@@ -1,0 +1,500 @@
+[10655.317857] You have opened the `sort_test` device driver !
+[10655.317859] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.324230] You have closed the `sort_test` device driver !
+[10655.324235] You have opened the `sort_test` device driver !
+[10655.324238] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.330676] You have closed the `sort_test` device driver !
+[10655.330680] You have opened the `sort_test` device driver !
+[10655.330682] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.337053] You have closed the `sort_test` device driver !
+[10655.337060] You have opened the `sort_test` device driver !
+[10655.337062] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.343551] You have closed the `sort_test` device driver !
+[10655.343556] You have opened the `sort_test` device driver !
+[10655.343558] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.349938] You have closed the `sort_test` device driver !
+[10655.349942] You have opened the `sort_test` device driver !
+[10655.349944] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.356403] You have closed the `sort_test` device driver !
+[10655.356409] You have opened the `sort_test` device driver !
+[10655.356412] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.362804] You have closed the `sort_test` device driver !
+[10655.362809] You have opened the `sort_test` device driver !
+[10655.362811] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.369150] You have closed the `sort_test` device driver !
+[10655.369155] You have opened the `sort_test` device driver !
+[10655.369157] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.375618] You have closed the `sort_test` device driver !
+[10655.375622] You have opened the `sort_test` device driver !
+[10655.375624] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.382004] You have closed the `sort_test` device driver !
+[10655.382009] You have opened the `sort_test` device driver !
+[10655.382011] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.388362] You have closed the `sort_test` device driver !
+[10655.388368] You have opened the `sort_test` device driver !
+[10655.388370] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.394785] You have closed the `sort_test` device driver !
+[10655.394790] You have opened the `sort_test` device driver !
+[10655.394792] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.401133] You have closed the `sort_test` device driver !
+[10655.401137] You have opened the `sort_test` device driver !
+[10655.401139] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.407553] You have closed the `sort_test` device driver !
+[10655.407559] You have opened the `sort_test` device driver !
+[10655.407562] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.413945] You have closed the `sort_test` device driver !
+[10655.413949] You have opened the `sort_test` device driver !
+[10655.413951] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.420352] You have closed the `sort_test` device driver !
+[10655.420357] You have opened the `sort_test` device driver !
+[10655.420359] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.426834] You have closed the `sort_test` device driver !
+[10655.426839] You have opened the `sort_test` device driver !
+[10655.426841] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.433340] You have closed the `sort_test` device driver !
+[10655.433343] You have opened the `sort_test` device driver !
+[10655.433345] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.439893] You have closed the `sort_test` device driver !
+[10655.439900] You have opened the `sort_test` device driver !
+[10655.439902] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.446374] You have closed the `sort_test` device driver !
+[10655.446379] You have opened the `sort_test` device driver !
+[10655.446381] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.452759] You have closed the `sort_test` device driver !
+[10655.452765] You have opened the `sort_test` device driver !
+[10655.452767] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.459318] You have closed the `sort_test` device driver !
+[10655.459323] You have opened the `sort_test` device driver !
+[10655.459325] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.465793] You have closed the `sort_test` device driver !
+[10655.465797] You have opened the `sort_test` device driver !
+[10655.465799] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.472267] You have closed the `sort_test` device driver !
+[10655.472273] You have opened the `sort_test` device driver !
+[10655.472276] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.478737] You have closed the `sort_test` device driver !
+[10655.478741] You have opened the `sort_test` device driver !
+[10655.478743] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.485170] You have closed the `sort_test` device driver !
+[10655.485174] You have opened the `sort_test` device driver !
+[10655.485176] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.491586] You have closed the `sort_test` device driver !
+[10655.491591] You have opened the `sort_test` device driver !
+[10655.491594] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.498030] You have closed the `sort_test` device driver !
+[10655.498034] You have opened the `sort_test` device driver !
+[10655.498036] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.504457] You have closed the `sort_test` device driver !
+[10655.504463] You have opened the `sort_test` device driver !
+[10655.504465] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.510817] You have closed the `sort_test` device driver !
+[10655.510821] You have opened the `sort_test` device driver !
+[10655.510824] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.517150] You have closed the `sort_test` device driver !
+[10655.517155] You have opened the `sort_test` device driver !
+[10655.517157] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.523606] You have closed the `sort_test` device driver !
+[10655.523613] You have opened the `sort_test` device driver !
+[10655.523616] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.529981] You have closed the `sort_test` device driver !
+[10655.529987] You have opened the `sort_test` device driver !
+[10655.529990] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.536430] You have closed the `sort_test` device driver !
+[10655.536437] You have opened the `sort_test` device driver !
+[10655.536440] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.542897] You have closed the `sort_test` device driver !
+[10655.542902] You have opened the `sort_test` device driver !
+[10655.542903] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.549302] You have closed the `sort_test` device driver !
+[10655.549306] You have opened the `sort_test` device driver !
+[10655.549308] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.555759] You have closed the `sort_test` device driver !
+[10655.555764] You have opened the `sort_test` device driver !
+[10655.555767] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.562179] You have closed the `sort_test` device driver !
+[10655.562183] You have opened the `sort_test` device driver !
+[10655.562185] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.568506] You have closed the `sort_test` device driver !
+[10655.568511] You have opened the `sort_test` device driver !
+[10655.568513] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.574877] You have closed the `sort_test` device driver !
+[10655.574882] You have opened the `sort_test` device driver !
+[10655.574885] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.581344] You have closed the `sort_test` device driver !
+[10655.581348] You have opened the `sort_test` device driver !
+[10655.581350] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.587759] You have closed the `sort_test` device driver !
+[10655.587764] You have opened the `sort_test` device driver !
+[10655.587766] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.594208] You have closed the `sort_test` device driver !
+[10655.594213] You have opened the `sort_test` device driver !
+[10655.594215] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.600536] You have closed the `sort_test` device driver !
+[10655.600540] You have opened the `sort_test` device driver !
+[10655.600542] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.607002] You have closed the `sort_test` device driver !
+[10655.607009] You have opened the `sort_test` device driver !
+[10655.607012] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.613437] You have closed the `sort_test` device driver !
+[10655.613442] You have opened the `sort_test` device driver !
+[10655.613444] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.619861] You have closed the `sort_test` device driver !
+[10655.619866] You have opened the `sort_test` device driver !
+[10655.619869] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.626239] You have closed the `sort_test` device driver !
+[10655.626246] You have opened the `sort_test` device driver !
+[10655.626249] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.632679] You have closed the `sort_test` device driver !
+[10655.632685] You have opened the `sort_test` device driver !
+[10655.632687] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.639125] You have closed the `sort_test` device driver !
+[10655.639132] You have opened the `sort_test` device driver !
+[10655.639136] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.645645] You have closed the `sort_test` device driver !
+[10655.645650] You have opened the `sort_test` device driver !
+[10655.645652] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.652055] You have closed the `sort_test` device driver !
+[10655.652060] You have opened the `sort_test` device driver !
+[10655.652062] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.658480] You have closed the `sort_test` device driver !
+[10655.658486] You have opened the `sort_test` device driver !
+[10655.658488] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.664960] You have closed the `sort_test` device driver !
+[10655.664965] You have opened the `sort_test` device driver !
+[10655.664968] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.671443] You have closed the `sort_test` device driver !
+[10655.671450] You have opened the `sort_test` device driver !
+[10655.671453] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.677878] You have closed the `sort_test` device driver !
+[10655.677883] You have opened the `sort_test` device driver !
+[10655.677885] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.684335] You have closed the `sort_test` device driver !
+[10655.684340] You have opened the `sort_test` device driver !
+[10655.684342] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.690778] You have closed the `sort_test` device driver !
+[10655.690786] You have opened the `sort_test` device driver !
+[10655.690789] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.697279] You have closed the `sort_test` device driver !
+[10655.697285] You have opened the `sort_test` device driver !
+[10655.697287] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.703686] You have closed the `sort_test` device driver !
+[10655.703694] You have opened the `sort_test` device driver !
+[10655.703697] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.710091] You have closed the `sort_test` device driver !
+[10655.710096] You have opened the `sort_test` device driver !
+[10655.710098] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.717032] You have closed the `sort_test` device driver !
+[10655.717036] You have opened the `sort_test` device driver !
+[10655.717052] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.725575] You have closed the `sort_test` device driver !
+[10655.725583] You have opened the `sort_test` device driver !
+[10655.725586] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.733469] You have closed the `sort_test` device driver !
+[10655.733475] You have opened the `sort_test` device driver !
+[10655.733477] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.739920] You have closed the `sort_test` device driver !
+[10655.739928] You have opened the `sort_test` device driver !
+[10655.739932] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.746376] You have closed the `sort_test` device driver !
+[10655.746382] You have opened the `sort_test` device driver !
+[10655.746384] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.752726] You have closed the `sort_test` device driver !
+[10655.752730] You have opened the `sort_test` device driver !
+[10655.752732] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.759207] You have closed the `sort_test` device driver !
+[10655.759212] You have opened the `sort_test` device driver !
+[10655.759214] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.765574] You have closed the `sort_test` device driver !
+[10655.765578] You have opened the `sort_test` device driver !
+[10655.765580] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.771983] You have closed the `sort_test` device driver !
+[10655.771991] You have opened the `sort_test` device driver !
+[10655.771994] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.778434] You have closed the `sort_test` device driver !
+[10655.778438] You have opened the `sort_test` device driver !
+[10655.778441] The current test info: nodes = 17722, case_id = 0, sort program = listsort
+[10655.784863] You have closed the `sort_test` device driver !
+[10655.784961] You have opened the `sort_test` device driver !
+[10655.784963] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.791443] You have closed the `sort_test` device driver !
+[10655.791449] You have opened the `sort_test` device driver !
+[10655.791451] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.797886] You have closed the `sort_test` device driver !
+[10655.797890] You have opened the `sort_test` device driver !
+[10655.797892] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.804327] You have closed the `sort_test` device driver !
+[10655.804337] You have opened the `sort_test` device driver !
+[10655.804340] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.810755] You have closed the `sort_test` device driver !
+[10655.810761] You have opened the `sort_test` device driver !
+[10655.810763] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.817242] You have closed the `sort_test` device driver !
+[10655.817246] You have opened the `sort_test` device driver !
+[10655.817248] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.823705] You have closed the `sort_test` device driver !
+[10655.823710] You have opened the `sort_test` device driver !
+[10655.823712] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.830191] You have closed the `sort_test` device driver !
+[10655.830195] You have opened the `sort_test` device driver !
+[10655.830197] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.836568] You have closed the `sort_test` device driver !
+[10655.836574] You have opened the `sort_test` device driver !
+[10655.836576] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.843012] You have closed the `sort_test` device driver !
+[10655.843017] You have opened the `sort_test` device driver !
+[10655.843019] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.849466] You have closed the `sort_test` device driver !
+[10655.849470] You have opened the `sort_test` device driver !
+[10655.849472] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.855840] You have closed the `sort_test` device driver !
+[10655.855847] You have opened the `sort_test` device driver !
+[10655.855850] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.862214] You have closed the `sort_test` device driver !
+[10655.862219] You have opened the `sort_test` device driver !
+[10655.862221] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.868595] You have closed the `sort_test` device driver !
+[10655.868600] You have opened the `sort_test` device driver !
+[10655.868602] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.875064] You have closed the `sort_test` device driver !
+[10655.875069] You have opened the `sort_test` device driver !
+[10655.875071] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.881548] You have closed the `sort_test` device driver !
+[10655.881552] You have opened the `sort_test` device driver !
+[10655.881554] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.887968] You have closed the `sort_test` device driver !
+[10655.887975] You have opened the `sort_test` device driver !
+[10655.887978] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.894375] You have closed the `sort_test` device driver !
+[10655.894380] You have opened the `sort_test` device driver !
+[10655.894382] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.900789] You have closed the `sort_test` device driver !
+[10655.900793] You have opened the `sort_test` device driver !
+[10655.900795] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.907265] You have closed the `sort_test` device driver !
+[10655.907272] You have opened the `sort_test` device driver !
+[10655.907275] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.913762] You have closed the `sort_test` device driver !
+[10655.913766] You have opened the `sort_test` device driver !
+[10655.913768] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.920171] You have closed the `sort_test` device driver !
+[10655.920178] You have opened the `sort_test` device driver !
+[10655.920181] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.926628] You have closed the `sort_test` device driver !
+[10655.926632] You have opened the `sort_test` device driver !
+[10655.926634] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.933109] You have closed the `sort_test` device driver !
+[10655.933112] You have opened the `sort_test` device driver !
+[10655.933114] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.939495] You have closed the `sort_test` device driver !
+[10655.939503] You have opened the `sort_test` device driver !
+[10655.939506] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.946007] You have closed the `sort_test` device driver !
+[10655.946012] You have opened the `sort_test` device driver !
+[10655.946014] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.952394] You have closed the `sort_test` device driver !
+[10655.952399] You have opened the `sort_test` device driver !
+[10655.952401] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.958827] You have closed the `sort_test` device driver !
+[10655.958833] You have opened the `sort_test` device driver !
+[10655.958835] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.965272] You have closed the `sort_test` device driver !
+[10655.965276] You have opened the `sort_test` device driver !
+[10655.965277] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.971677] You have closed the `sort_test` device driver !
+[10655.971684] You have opened the `sort_test` device driver !
+[10655.971686] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.978066] You have closed the `sort_test` device driver !
+[10655.978070] You have opened the `sort_test` device driver !
+[10655.978072] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.984511] You have closed the `sort_test` device driver !
+[10655.984515] You have opened the `sort_test` device driver !
+[10655.984517] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.990965] You have closed the `sort_test` device driver !
+[10655.990969] You have opened the `sort_test` device driver !
+[10655.990972] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10655.997398] You have closed the `sort_test` device driver !
+[10655.997402] You have opened the `sort_test` device driver !
+[10655.997404] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.003727] You have closed the `sort_test` device driver !
+[10656.003733] You have opened the `sort_test` device driver !
+[10656.003736] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.010128] You have closed the `sort_test` device driver !
+[10656.010133] You have opened the `sort_test` device driver !
+[10656.010135] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.016521] You have closed the `sort_test` device driver !
+[10656.016525] You have opened the `sort_test` device driver !
+[10656.016527] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.022920] You have closed the `sort_test` device driver !
+[10656.022926] You have opened the `sort_test` device driver !
+[10656.022929] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.029411] You have closed the `sort_test` device driver !
+[10656.029417] You have opened the `sort_test` device driver !
+[10656.029419] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.035803] You have closed the `sort_test` device driver !
+[10656.035807] You have opened the `sort_test` device driver !
+[10656.035809] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.042200] You have closed the `sort_test` device driver !
+[10656.042205] You have opened the `sort_test` device driver !
+[10656.042208] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.048685] You have closed the `sort_test` device driver !
+[10656.048690] You have opened the `sort_test` device driver !
+[10656.048691] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.055183] You have closed the `sort_test` device driver !
+[10656.055189] You have opened the `sort_test` device driver !
+[10656.055192] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.061619] You have closed the `sort_test` device driver !
+[10656.061623] You have opened the `sort_test` device driver !
+[10656.061625] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.067955] You have closed the `sort_test` device driver !
+[10656.067959] You have opened the `sort_test` device driver !
+[10656.067961] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.074396] You have closed the `sort_test` device driver !
+[10656.074400] You have opened the `sort_test` device driver !
+[10656.074402] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.080761] You have closed the `sort_test` device driver !
+[10656.080765] You have opened the `sort_test` device driver !
+[10656.080767] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.087210] You have closed the `sort_test` device driver !
+[10656.087215] You have opened the `sort_test` device driver !
+[10656.087216] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.093649] You have closed the `sort_test` device driver !
+[10656.093654] You have opened the `sort_test` device driver !
+[10656.093656] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.100005] You have closed the `sort_test` device driver !
+[10656.100010] You have opened the `sort_test` device driver !
+[10656.100011] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.106447] You have closed the `sort_test` device driver !
+[10656.106452] You have opened the `sort_test` device driver !
+[10656.106454] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.112909] You have closed the `sort_test` device driver !
+[10656.112913] You have opened the `sort_test` device driver !
+[10656.112915] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.119295] You have closed the `sort_test` device driver !
+[10656.119299] You have opened the `sort_test` device driver !
+[10656.119301] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.125736] You have closed the `sort_test` device driver !
+[10656.125739] You have opened the `sort_test` device driver !
+[10656.125741] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.132223] You have closed the `sort_test` device driver !
+[10656.132227] You have opened the `sort_test` device driver !
+[10656.132229] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.138676] You have closed the `sort_test` device driver !
+[10656.138681] You have opened the `sort_test` device driver !
+[10656.138683] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.145108] You have closed the `sort_test` device driver !
+[10656.145113] You have opened the `sort_test` device driver !
+[10656.145114] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.151582] You have closed the `sort_test` device driver !
+[10656.151587] You have opened the `sort_test` device driver !
+[10656.151588] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.158079] You have closed the `sort_test` device driver !
+[10656.158084] You have opened the `sort_test` device driver !
+[10656.158086] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.164534] You have closed the `sort_test` device driver !
+[10656.164538] You have opened the `sort_test` device driver !
+[10656.164540] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.170982] You have closed the `sort_test` device driver !
+[10656.170987] You have opened the `sort_test` device driver !
+[10656.170989] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.177425] You have closed the `sort_test` device driver !
+[10656.177429] You have opened the `sort_test` device driver !
+[10656.177431] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.183907] You have closed the `sort_test` device driver !
+[10656.183911] You have opened the `sort_test` device driver !
+[10656.183913] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.190287] You have closed the `sort_test` device driver !
+[10656.190291] You have opened the `sort_test` device driver !
+[10656.190293] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.196741] You have closed the `sort_test` device driver !
+[10656.196745] You have opened the `sort_test` device driver !
+[10656.196747] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.203137] You have closed the `sort_test` device driver !
+[10656.203142] You have opened the `sort_test` device driver !
+[10656.203144] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.209596] You have closed the `sort_test` device driver !
+[10656.209600] You have opened the `sort_test` device driver !
+[10656.209602] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.216075] You have closed the `sort_test` device driver !
+[10656.216079] You have opened the `sort_test` device driver !
+[10656.216081] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.222465] You have closed the `sort_test` device driver !
+[10656.222469] You have opened the `sort_test` device driver !
+[10656.222471] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.228948] You have closed the `sort_test` device driver !
+[10656.228953] You have opened the `sort_test` device driver !
+[10656.228955] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.235362] You have closed the `sort_test` device driver !
+[10656.235366] You have opened the `sort_test` device driver !
+[10656.235368] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.241827] You have closed the `sort_test` device driver !
+[10656.241831] You have opened the `sort_test` device driver !
+[10656.241833] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.248272] You have closed the `sort_test` device driver !
+[10656.248276] You have opened the `sort_test` device driver !
+[10656.248278] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.254711] You have closed the `sort_test` device driver !
+[10656.254715] You have opened the `sort_test` device driver !
+[10656.254717] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.261179] You have closed the `sort_test` device driver !
+[10656.261182] You have opened the `sort_test` device driver !
+[10656.261184] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.267597] You have closed the `sort_test` device driver !
+[10656.267601] You have opened the `sort_test` device driver !
+[10656.267603] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.273950] You have closed the `sort_test` device driver !
+[10656.273954] You have opened the `sort_test` device driver !
+[10656.273956] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.280336] You have closed the `sort_test` device driver !
+[10656.280340] You have opened the `sort_test` device driver !
+[10656.280342] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.286723] You have closed the `sort_test` device driver !
+[10656.286728] You have opened the `sort_test` device driver !
+[10656.286730] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.293207] You have closed the `sort_test` device driver !
+[10656.293211] You have opened the `sort_test` device driver !
+[10656.293213] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.299667] You have closed the `sort_test` device driver !
+[10656.299672] You have opened the `sort_test` device driver !
+[10656.299674] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.306155] You have closed the `sort_test` device driver !
+[10656.306160] You have opened the `sort_test` device driver !
+[10656.306162] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.312556] You have closed the `sort_test` device driver !
+[10656.312560] You have opened the `sort_test` device driver !
+[10656.312562] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.318912] You have closed the `sort_test` device driver !
+[10656.318917] You have opened the `sort_test` device driver !
+[10656.318919] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.325248] You have closed the `sort_test` device driver !
+[10656.325252] You have opened the `sort_test` device driver !
+[10656.325254] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.331610] You have closed the `sort_test` device driver !
+[10656.331614] You have opened the `sort_test` device driver !
+[10656.331616] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.338084] You have closed the `sort_test` device driver !
+[10656.338089] You have opened the `sort_test` device driver !
+[10656.338091] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.344480] You have closed the `sort_test` device driver !
+[10656.344484] You have opened the `sort_test` device driver !
+[10656.344486] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.350976] You have closed the `sort_test` device driver !
+[10656.350980] You have opened the `sort_test` device driver !
+[10656.350982] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.357323] You have closed the `sort_test` device driver !
+[10656.357327] You have opened the `sort_test` device driver !
+[10656.357330] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.363722] You have closed the `sort_test` device driver !
+[10656.363727] You have opened the `sort_test` device driver !
+[10656.363729] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.370136] You have closed the `sort_test` device driver !
+[10656.370143] You have opened the `sort_test` device driver !
+[10656.370145] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.376549] You have closed the `sort_test` device driver !
+[10656.376555] You have opened the `sort_test` device driver !
+[10656.376558] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.383020] You have closed the `sort_test` device driver !
+[10656.383025] You have opened the `sort_test` device driver !
+[10656.383027] The current test info: nodes = 17723, case_id = 0, sort program = listsort
+[10656.389400] You have closed the `sort_test` device driver !
+[10656.389405] You have opened the `sort_test` device driver !
+[10656.389407] The current test info: nodes = 17723, case_id = 0, sort program = listsort

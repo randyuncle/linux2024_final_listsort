@@ -15,12 +15,15 @@ sort_test-objs := \
 
 KDIR := /lib/modules/$(shell uname -r)/build
 PWD := $(shell pwd)
-all:
+
+all: client
 	$(MAKE) -C $(KDIR) M=$(PWD) modules
-	gcc client.c -o client
+
+client: client.c
+	gcc client.c -o client -lm
 
 clean:
-	rm -rf *.o *.ko *.mod.* *.symvers *.order *.mod.cmd *.mod
+	$(MAKE) -C $(KDIR) M=$(PWD) clean
 	$(RM) client out
 
 load:
@@ -35,5 +38,17 @@ plot:
 check: all
 	$(MAKE) unload
 	$(MAKE) load
-	sudo ./client
+	sudo ./client continious
+	$(MAKE) unload
+
+multiple: all
+	$(MAKE) unload
+	$(MAKE) load
+	sudo ./client continious
+	$(MAKE) unload
+
+single: all
+	$(MAKE) unload
+	$(MAKE) load
+	sudo ./client continious
 	$(MAKE) unload
