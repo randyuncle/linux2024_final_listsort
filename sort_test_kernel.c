@@ -242,6 +242,9 @@ static int sort_test_release(struct inode *inode, struct file *file)
  */
 static ssize_t sort_test_read(struct file *file, char __user *buf, size_t size, loff_t *offset)
 {
+    local_irq_disable(); /* disable interupt */
+    get_cpu(); /* disable preemption */
+
     size_t count = 0;
     struct list_head sample_head, warmup_head;
 
@@ -293,6 +296,9 @@ static ssize_t sort_test_read(struct file *file, char __user *buf, size_t size, 
         printk(KERN_ALERT "Failed to copy data to user\n");
         return 0;
     }
+
+    local_irq_enable();
+    put_cpu();
 
     return size;
 }
