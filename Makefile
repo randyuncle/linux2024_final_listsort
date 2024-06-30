@@ -46,7 +46,7 @@ check: all
 multiple: all
 	$(MAKE) unload
 	$(MAKE) load
-	sudo ./client continious
+	sudo ./client continuous
 	$(MAKE) unload
 
 single: all

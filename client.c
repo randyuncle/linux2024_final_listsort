@@ -181,7 +181,7 @@ static void sort_test_one_num(int num)
     }
 }
 
-static void sort_test_continuesly()
+static void sort_test_continuously()
 {
     int sort_id = 0;
     for (int case_id = 0 ; case_id < 6 ; case_id++) {
@@ -249,8 +249,8 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    if (!strcmp(argv[1], "continious")) {
-        sort_test_continuesly();
+    if (!strcmp(argv[1], "continuous")) {
+        sort_test_continuously();
     } else if (!strcmp(argv[1], "single")) {
         if (argc < 3) {
             printf("Lack of given number for single node test\n");

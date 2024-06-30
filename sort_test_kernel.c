@@ -1,5 +1,5 @@
 #include <linux/kernel.h> /* We're doing kernel work */ 
-#include <linux/uaccess.h> /* for copy_from_user */ 
+#include <linux/uaccess.h> /* for copy_from/to_user*/ 
 #include <linux/cdev.h>
 #include <linux/fs.h>
 #include <linux/init.h>
@@ -242,7 +242,7 @@ static int sort_test_release(struct inode *inode, struct file *file)
  */
 static ssize_t sort_test_read(struct file *file, char __user *buf, size_t size, loff_t *offset)
 {
-    local_irq_disable(); /* disable interupt */
+    local_irq_disable(); /* disable interrupt */
     get_cpu(); /* disable preemption */
 
     size_t count = 0;
