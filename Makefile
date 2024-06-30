@@ -33,12 +33,14 @@ unload:
 	sudo rmmod $(TARGET_MODULE) || true >/dev/null
 
 plot:
-	gnuplot plot.gp
+	sudo gnuplot sort_test_comparisons.gp
+	sudo gnuplot sort_test_durations.gp
+	sudo gnuplot sort_test_kvalue.gp
 
 check: all
 	$(MAKE) unload
 	$(MAKE) load
-	sudo ./client continious
+	sudo ./client single 20000
 	$(MAKE) unload
 
 multiple: all
@@ -50,5 +52,5 @@ multiple: all
 single: all
 	$(MAKE) unload
 	$(MAKE) load
-	sudo ./client continious
+	sudo ./client single 20000
 	$(MAKE) unload
