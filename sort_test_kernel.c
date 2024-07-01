@@ -224,7 +224,7 @@ static int sort_test_open(struct inode *inode, struct file *file)
     nodes = 0;
     case_id = 0;
     
-    printk(KERN_INFO "You have opened the `sort_test` device driver !");
+    // printk(KERN_INFO "You have opened the `sort_test` device driver !");
     return 0;
 }
 
@@ -233,7 +233,7 @@ static int sort_test_release(struct inode *inode, struct file *file)
     nodes = 0;
     case_id = 0;
 
-    printk(KERN_INFO "You have closed the `sort_test` device driver !");
+    // printk(KERN_INFO "You have closed the `sort_test` device driver !");
     return 0;
 }
 
@@ -332,8 +332,8 @@ static ssize_t sort_test_write(struct file *file, const char __user  *buf, size_
         counter++;
     }
 
-    printk(KERN_INFO "The current test info: nodes = %d, case_id = %d, sort program = %s", 
-           nodes, case_id, test.name);
+    // printk(KERN_INFO "The current test info: nodes = %d, case_id = %d, sort program = %s", 
+    //        nodes, case_id, test.name);
 
     kfree(str);
 
