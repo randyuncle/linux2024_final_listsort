@@ -180,7 +180,7 @@ static struct list_head *merge_collapse(void *priv,
         size_t y = run_size(tp->prev);
         size_t x = run_size(tp->prev->prev);
 
-        if ((n >= 3) && (y <= ((z * 100) / alpha) || x <= ((y * 100) / alpha))) {
+        if ((n >= 3) && (y <= ((z * alpha) / 100) || x <= ((y * alpha) / 100))) {
             if (x < z) {
                 tp->prev = merge_at(priv, cmp, tp->prev);
             } else {
